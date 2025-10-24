@@ -1,4 +1,22 @@
-/* header {
-  display: flex;
-  justify-content: space-between;
-} */
+/* Font Setup */
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Terapkan font Poppins ke semua heading dan logo */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header .logo {
+  font-family: "Poppins", sans-serif;
+}
+
+.home-section {
+  background-image: url("https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
