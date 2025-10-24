@@ -1,22 +1,28 @@
-console.log("Hello World");
+document.addEventListener("DOMContentLoaded", function () {
+  // Hamburger Menu
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-function welcomeSpeech() {
-  let name = prompt("What is your name?");
-  alert("Welcome " + name);
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    // Ganti ikon hamburger menjadi X dan sebaliknya
+    const icon = menuBtn.querySelector("i");
+    if (mobileMenu.classList.contains("hidden")) {
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+    } else {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-xmark");
+    }
+  });
 
-  document.getElementById("greet-name").innerHTML = name;
-}
-
-function validateForm() {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  if (name === "" || email === "" || message === "") {
-    alert("Please fill in all fields.");
-  } else {
-    alert("Form submitted successfully!");
-  }
-
-  console.log(name, email, message);
-}
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      const icon = menuBtn.querySelector("i");
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+    });
+  });
+});

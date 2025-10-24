@@ -33,29 +33,56 @@
         >
       </div>
       <!-- Navigation Menu -->
-      <nav class="flex gap-2">
+      <nav class="hidden md:flex gap-2">
         <a
           href="#home-section"
-          class="rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
           >Home</a
         >
         <a
           href="#profile-section"
-          class="rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
           >Profile</a
         >
         <a
           href="#portfolio-section"
-          class="rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
           >Portfolio</a
         >
         <a
           href="#contact-section"
-          class="rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
           >Contact us</a
         >
       </nav>
+      <button id="menu-btn" class="md:hidden text-2xl text-[#111111]">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </header>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg sticky top[73px] z-40">
+      <a
+        href="#home-section"
+        class="nav-link block px-6 py-3 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+        >Home</a
+      >
+      <a
+        href="#profile-section"
+        class="nav-link block px-6 py-3 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+        >Profile</a
+      >
+      <a
+        href="#portfolio-section"
+        class="nav-link block px-6 py-3 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+        >Portfolio</a
+      >
+      <a
+        href="#contact-section"
+        class="nav-link block px-6 py-3 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+        >Contact us</a
+      >
+    </div>
 
     <!-- Main Content -->
     <main>
