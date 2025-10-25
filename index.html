@@ -28,7 +28,7 @@
       <div class="logo">
         <a
           href="#"
-          class="text-3xl font-bold text-[#222222] hover:text-[#520b0b] transition-colors duration-300"
+          class="text-3xl font-bold text-[#111111] hover:text-[#720707] transition-colors duration-300"
           >Portofolio.</a
         >
       </div>
@@ -36,23 +36,23 @@
       <nav class="hidden md:flex gap-2">
         <a
           href="#home-section"
-          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#720707] hover:text-white transition-colors duration-300"
           >Home</a
         >
         <a
           href="#profile-section"
-          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#720707] hover:text-white transition-colors duration-300"
           >Profile</a
         >
         <a
           href="#portfolio-section"
-          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
+          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#720707] hover:text-white transition-colors duration-300"
           >Portfolio</a
         >
         <a
           href="#contact-section"
-          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#222222] hover:text-white transition-colors duration-300"
-          >Contact us</a
+          class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#720707] hover:text-white transition-colors duration-300"
+          >Contact Me</a
         >
       </nav>
       <button id="menu-btn" class="md:hidden text-2xl text-[#111111]">
@@ -87,10 +87,12 @@
     <!-- Main Content -->
     <main>
       <!-- Home -->
-      <section id="home-section" class="home-section flex flex-col py-8 min-h-[500px] items-center">
+      <section id="home-section" class="home-section flex flex-col py-8 h-[80vh] items-center">
         <div class="flex w-[50%] flex-col items-center justify-center text-center flex-grow">
-          <h1 class="text-4xl mb-5 font-bold text-[#111111]">Hello, I'm Zidniy Farih Al Kausar</h1>
-          <p class="text-xl text-[#222222]">
+          <h1 class="text-2xl sm:text-4xl mb-5 font-bold text-[#111111]">
+            Hello, I'm <span id="user-name">Zidniy Farih Al Kausar</span>
+          </h1>
+          <p class="text-base sm:text-xl text-[#222222]">
             I'm an aspiring web developer passionate about creating engaging and user-friendly
             websites. Explore my work and feel free to connect!
           </p>
@@ -98,93 +100,251 @@
         <ul class="flex gap-5 mt-10">
           <li>
             <a
-              href=""
-              class="text-4xl text-[#222222] hover:text-[#520b0b] transition-colors duration-300"
+              href="https://www.linkedin.com/in/zidniyalkausar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-4xl text-[#222222] hover:text-[#720707] transition-colors duration-300"
               ><i class="fa-brands fa-linkedin"></i
             ></a>
           </li>
           <li>
             <a
-              href=""
-              class="text-4xl text-[#222222] hover:text-[#520b0b] transition-colors duration-300"
+              href="https://github.com/zidniyfak"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-4xl text-[#222222] hover:text-[#720707] transition-colors duration-300"
               ><i class="fa-brands fa-github"></i
             ></a>
           </li>
           <li>
             <a
-              href=""
-              class="text-4xl text-[#222222] hover:text-[#520b0b] transition-colors duration-300"
+              href="https://www.instagram.com/zidniyfak/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-4xl text-[#222222] hover:text-[#720707] transition-colors duration-300"
               ><i class="fa-brands fa-square-instagram"></i
             ></a>
           </li>
         </ul>
       </section>
       <!-- Profile -->
-      <section id="profile-section" class="profile-section min-h-[500px] p-8 text-center">
-        <h1 class="text-2xl font-semibold">About Me</h1>
-        <p>
-          I'm a junior web developer with a strong foundation in HTML, CSS, and JavaScript. I'm
-          eager to learn and grow in the field of web development, and I'm always looking for new
-          challenges and opportunities to expand my skillset.
-        </p>
-        <p>
-          In my free time, I enjoy reading, hiking, and experimenting with new technologies. I'm a
-          firm believer in continuous learning and strive to stay updated with the latest industry
-          trends.
-        </p>
+      <section
+        id="profile-section"
+        class="profile-section min-h-[500px] py-16 md:py-24 px-6 bg-gray-50"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-[#111111] text-center mb-6">About Me</h2>
+          <p class="text-center text-lg text-gray-700 mb-16">
+            Here you will find more information about me, what I do, and my current skills mostly in
+            terms of programming and technology
+          </p>
+
+          <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
+            <div class="md:w-1/2 space-y-4 text-gray-700 text-lg">
+              <h3 class="text-2xl font-semibold mb-6 text-[#222222]">Get to know me!</h3>
+              <p>
+                I'm a junior web developer with a strong foundation in HTML, CSS, and JavaScript.
+                I'm eager to learn and grow in the field of web development, and I'm always looking
+                for new challenges and opportunities to expand my skillset.
+              </p>
+              <p>
+                In my free time, I enjoy reading, hiking, and experimenting with new technologies.
+                I'm a firm believer in continuous learning and strive to stay updated with the
+                latest industry trends.
+              </p>
+            </div>
+
+            <div class="md:w-1/2">
+              <h3 class="text-2xl font-semibold mb-6 text-[#222222]">My Skills</h3>
+              <ul class="flex flex-wrap gap-3">
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#e4552d] hover:text-white transition-colors duration-300"
+                >
+                  HTML5
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#2d53e5] hover:text-white transition-colors duration-300"
+                >
+                  CSS3
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#e2cb22] hover:text-white transition-colors duration-300"
+                >
+                  JavaScript
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#01a3de] hover:text-white transition-colors duration-300"
+                >
+                  Tailwind CSS
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#f53003] hover:text-white transition-colors duration-300"
+                >
+                  Laravel
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#08d9ff] hover:text-white transition-colors duration-300"
+                >
+                  React
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#58a149] hover:text-white transition-colors duration-300"
+                >
+                  Node.js
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#5166d9] hover:text-white transition-colors duration-300"
+                >
+                  Kotlin
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#61caf8] hover:text-white transition-colors duration-300"
+                >
+                  Flutter
+                </li>
+                <li
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-[#f05539] hover:text-white transition-colors duration-300"
+                >
+                  Git & GitHub
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
+
       <!-- Portfolio -->
-      <section id="portfolio-section" class="portfolio-section min-h-[500px]">
-        <h1 class="text-2xl">My Work</h1>
-        <p>This is my portfolio</p>
+      <section
+        id="portfolio-section"
+        class="portfolio-section min-h-[500px] py-16 md:py-24 px-6 bg-white"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-[#111111] text-center mb-12">My Work</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387"
+                alt="Project 1"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">LinkHub - Link Management</h3>
+                <p class="text-gray-600 mb-4">
+                  Sebuah aplikasi full-stack (kloning Linktree) di mana pengguna dapat mengelola
+                  daftar link mereka melalui panel admin, yang ditenagai oleh Node.js/Express dan
+                  database MongoDB.
+                </p>
+                <a href="#" class="text-[#720707] font-semibold hover:underline">View Project</a>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870"
+                alt="Project 2"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">CineVerse - Movie App</h3>
+                <p class="text-gray-600 mb-4">
+                  Aplikasi pencarian film yang responsif dibangun dengan React dan Tailwind CSS.
+                  Mengambil data secara dinamis dari API publik (TMDB) untuk menampilkan film
+                  populer, rating, dan detail.
+                </p>
+                <a href="#" class="text-[#720707] font-semibold hover:underline">View Project</a>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=727"
+                alt="Project 3"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Company Landing Page</h3>
+                <p class="text-gray-600 mb-4">
+                  Sebuah landing page produk yang modern. Fokus pada layout yang bersih menggunakan
+                  HTML5, Tailwind CSS, dan JavaScript murni untuk menu navigasi yang responsif.
+                </p>
+                <a href="#" class="text-[#720707] font-semibold hover:underline">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Contact me -->
-      <section id="contact-section" class="contact-section min-h-[500px]">
-        <h1 class="text-2xl font-semibold">Contact Me</h1>
-        <p>Feel free to reach out to me through the following channels:</p>
-        <form action="">
-          <div class="mb-4">
-            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            ></textarea>
-          </div>
-        </form>
-        <button
-          type="submit"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          onclick="validateForm()"
-        >
-          Send Message
-        </button>
+      <section
+        id="contact-section"
+        class="contact-section min-h-[500px] py-16 md:py-24 px-6 bg-gray-50"
+      >
+        <div class="max-w-lg mx-auto">
+          <h2 class="text-3xl font-bold text-[#111111] text-center mb-12">Contact Me</h2>
+          <p class="text-center text-lg text-gray-700 mb-8">
+            Feel free to reach out to me through the following form:
+          </p>
+          <form id="contact-form" class="space-y-6">
+            <div class="mb-4">
+              <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#720707]"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#720707]"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="phone-number" class="block text-gray-700 text-sm font-bold mb-2"
+                >Phone Number:</label
+              >
+              <input
+                type="text"
+                id="phone-number"
+                name="phone-number"
+                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#720707]"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-gray-700 text-sm font-bold mb-2"
+                >Message:</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#720707]"
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-[#720707] hover:bg-[#540707] text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-300"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 Your Name</p>
+    <footer class="bg-gray-800 text-white text-center py-8">
+      <p>&copy; 2024 zidniyfak. All rights reserved.</p>
     </footer>
 
     <!-- JS External File -->
