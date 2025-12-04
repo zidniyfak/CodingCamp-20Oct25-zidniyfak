@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth scroll-pt-5">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,7 @@
         <a
           href="#"
           class="text-3xl font-bold text-[#111111] hover:text-[#720707] transition-colors duration-300"
-          >Portofolio.</a
+          >Portfolio.</a
         >
       </div>
       <!-- Navigation Menu -->
@@ -47,7 +47,7 @@
         <a
           href="#portfolio-section"
           class="nav-link rounded px-3 py-2 text-[#222222] hover:bg-[#720707] hover:text-white transition-colors duration-300"
-          >Portofolio</a
+          >Portfolio</a
         >
         <a
           href="#contact-section"
@@ -219,7 +219,7 @@
       </section>
 
       <!-- Portfolio -->
-      <section
+      <!-- <section
         id="portfolio-section"
         class="portfolio-section min-h-[500px] py-16 md:py-24 px-6 bg-white"
       >
@@ -235,13 +235,16 @@
                 class="w-full h-48 object-cover"
               />
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">LinkHub - Link Management</h3>
+                <h3 class="text-xl font-semibold mb-2">MounTrek</h3>
                 <p class="text-gray-600 mb-4">
-                  Sebuah aplikasi full-stack (kloning Linktree) di mana pengguna dapat mengelola
-                  daftar link mereka melalui panel admin, yang ditenagai oleh Node.js/Express dan
-                  database MongoDB.
+                  MountTrek adalah aplikasi Android berbasis navigasi dan informasi yang dirancang
+                  khusus untuk para pendaki gunung. Aplikasi ini membantu pendaki menemukan rute
+                  terbaik, memantau posisi secara real-time, dan mengakses informasi keselamatan
+                  penting untuk pengalaman pendakian yang lebih aman dan menyenangkan.
                 </p>
-                <a href="#" class="text-[#720707] font-semibold hover:underline">View Project</a>
+                <a href="project-detail.html" class="text-[#720707] font-semibold hover:underline"
+                  >View Project</a
+                >
               </div>
             </div>
             <div
@@ -253,11 +256,16 @@
                 class="w-full h-48 object-cover"
               />
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">CineVerse - Movie App</h3>
+                <h3 class="text-xl font-semibold mb-2">Al Quran Android</h3>
+
+
                 <p class="text-gray-600 mb-4">
-                  Aplikasi pencarian film yang responsif dibangun dengan React dan Tailwind CSS.
-                  Mengambil data secara dinamis dari API publik (TMDB) untuk menampilkan film
-                  populer, rating, dan detail.
+                  Menghadirkan pengalaman membaca Al-Qur'an yang nyaman dan interaktif langsung dari
+                  perangkat Android Anda. Dibangun sepenuhnya menggunakan Kotlin, aplikasi ini
+                  menawarkan performa tinggi dengan fitur unggulan seperti audio murottal,
+                  terjemahan multi-bahasa, penanda ayat (bookmark), dan mode gelap (dark mode).
+                  Aplikasi ini dirancang untuk membantu pengguna tetap terhubung dengan ayat suci di
+                  tengah kesibukan sehari-hari.
                 </p>
                 <a href="#" class="text-[#720707] font-semibold hover:underline">View Project</a>
               </div>
@@ -271,14 +279,49 @@
                 class="w-full h-48 object-cover"
               />
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Company Landing Page</h3>
+                <h3 class="text-xl font-semibold mb-2">EMYU Store</h3>
                 <p class="text-gray-600 mb-4">
-                  Sebuah landing page produk yang modern. Fokus pada layout yang bersih menggunakan
-                  HTML5, Tailwind CSS, dan JavaScript murni untuk menu navigasi yang responsif.
+                  EMYU Store adalah website e-commerce demo yang didedikasikan untuk menjual
+                  berbagai merchandise resmi klub sepak bola Manchester United (Man United), mulai
+                  dari jersey, syal, hingga koleksi aksesori. Proyek ini dibangun murni menggunakan
+                  HTML5, CSS3, dan Vanilla JavaScript, berfungsi sebagai bukti kemampuan dasar dalam
+                  membangun user interface (UI) yang responsif dan interaktif tanpa menggunakan
+                  framework pihak ketiga.
                 </p>
                 <a href="#" class="text-[#720707] font-semibold hover:underline">View Project</a>
               </div>
             </div>
+          </div>
+        </div>
+      </section> -->
+      <section
+        id="portfolio-section"
+        class="portfolio-section min-h-[500px] py-16 md:py-24 px-6 bg-white"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-[#111111] text-center mb-12">My Work</h2>
+
+          <div
+            id="project-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          ></div>
+
+          <div class="flex justify-center items-center mt-12 gap-4">
+            <button
+              id="prev-btn"
+              class="px-4 py-2 bg-gray-200 text-gray-600 rounded-lg hover:bg-[#720707] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <span id="page-indicator" class="text-gray-700 font-medium">Page 1 of 2</span>
+
+            <button
+              id="next-btn"
+              class="px-4 py-2 bg-gray-200 text-gray-600 rounded-lg hover:bg-[#720707] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
           </div>
         </div>
       </section>
@@ -293,7 +336,12 @@
           <p class="text-center text-lg text-gray-700 mb-8">
             Feel free to reach out to me through the following form:
           </p>
-          <form id="contact-form" class="space-y-6">
+          <form
+            id="contact-form"
+            class="space-y-6"
+            action="https://formspree.io/f/mnnedlao"
+            method="post"
+          >
             <div class="mb-4">
               <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
               <input
@@ -346,6 +394,65 @@
         </div>
       </section>
     </main>
+
+    <div
+      id="project-modal"
+      class="fixed inset-0 z-[60] hidden overflow-y-auto overflow-x-hidden bg-black/70 backdrop-blur-sm transition-opacity duration-300"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="flex min-h-screen items-center justify-center p-4 text-center sm:p-0">
+        <div
+          class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl"
+        >
+          <div class="relative h-64 w-full">
+            <img id="modal-image" src="" alt="Project Image" class="h-full w-full object-cover" />
+            <button
+              id="close-modal-btn"
+              class="absolute top-4 right-4 rounded-full bg-white/80 p-2 text-gray-800 hover:bg-white hover:text-[#720707] transition"
+            >
+              <i class="fa-solid fa-xmark text-xl w-6 h-6 flex items-center justify-center"></i>
+            </button>
+          </div>
+
+          <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div class="mt-3 text-left sm:mt-0">
+              <h3 class="text-2xl font-bold leading-6 text-gray-900 mb-2" id="modal-title">
+                Project Title
+              </h3>
+
+              <div id="modal-tech-stack" class="flex flex-wrap gap-2 mb-4"></div>
+
+              <div class="mt-2">
+                <p id="modal-description" class="text-sm text-gray-600 leading-relaxed">
+                  Description goes here...
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 gap-3">
+            <a
+              id="modal-live-link"
+              href="#"
+              target="_blank"
+              class="inline-flex w-full justify-center rounded-md bg-[#720707] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#540707] sm:ml-3 sm:w-auto items-center gap-2"
+            >
+              <i class="fa-solid fa-globe"></i> Live Demo
+            </a>
+            <a
+              id="modal-github-link"
+              href="#"
+              target="_blank"
+              class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto items-center gap-2"
+            >
+              <i class="fa-brands fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-8">
