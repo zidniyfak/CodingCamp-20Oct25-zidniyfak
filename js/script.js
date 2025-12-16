@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "MounTrek",
       // Array Gambar: Index 0 akan jadi thumbnail
       images: [
-        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/raw/main/img/mountrek-1.jpg",
+        "https://raw.githubusercontent.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/main/img/mountrek-1.jpg",
         "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/raw/main/img/mountrek-2.jpg",
       ],
       shortDesc: "Aplikasi Android navigasi untuk pendaki gunung dengan fitur offline map.",
