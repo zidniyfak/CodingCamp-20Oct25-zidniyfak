@@ -129,7 +129,10 @@ document.addEventListener("DOMContentLoaded", function () {
       id: 1,
       title: "MounTrek",
       // Array Gambar: Index 0 akan jadi thumbnail
-      images: ["img/mountrek-1.jpg", "img/mountrek-2.jpg"],
+      images: [
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/mountrek-1.jpg",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/mountrek-2.jpg",
+      ],
       shortDesc: "Aplikasi Android navigasi untuk pendaki gunung dengan fitur offline map.",
       fullDesc:
         "MountTrek adalah solusi lengkap bagi para pendaki. Selain fitur navigasi offline, aplikasi ini menyediakan informasi cuaca real-time di pegunungan, estimasi waktu pendakian, dan fitur SOS darurat yang mengirimkan koordinat ke tim penyelamat. Dibangun menggunakan arsitektur MVVM untuk performa maksimal.",
@@ -140,7 +143,10 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 2,
       title: "Al Quran Ku",
-      images: ["img/alquran-thumbnail-1.jpg", "img/alquran-thumbnail-2.jpg"],
+      images: [
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/alquran-thumbnail-1.jpg",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/alquran-thumbnail-2.jpg",
+      ],
       shortDesc: "Aplikasi Al-Qur'an digital dengan audio murottal dan mode gelap.",
       fullDesc:
         "Aplikasi ini dirancang untuk memudahkan ibadah harian. Fitur unggulannya meliputi pencarian ayat pintar, bookmark tak terbatas, dan audio player yang bisa berjalan di background. UI dirancang minimalis dengan dukungan Dark Mode penuh.",
@@ -151,7 +157,10 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 3,
       title: "EMYU Store",
-      images: ["img/emyu-store-thumbnail-1.jpg", "img/emyu-store-thumbnail-2.png"],
+      images: [
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/emyu-store-thumbnail-1.jpg",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/emyu-store-thumbnail-2.png",
+      ],
       shortDesc: "Website e-commerce merchandise Manchester United.",
       fullDesc:
         "Platform e-commerce responsif yang dibangun tanpa framework CSS/JS (Pure Native). Memiliki fitur keranjang belanja (cart) menggunakan LocalStorage, filter produk dinamis, dan validasi form checkout.",
