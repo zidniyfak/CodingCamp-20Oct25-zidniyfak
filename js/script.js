@@ -130,8 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "MounTrek",
       // Array Gambar: Index 0 akan jadi thumbnail
       images: [
-        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/mountrek-1.jpg",
-        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/mountrek-2.jpg",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/raw/main/img/mountrek-1.jpg",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/raw/main/img/mountrek-2.jpg",
       ],
       shortDesc: "Aplikasi Android navigasi untuk pendaki gunung dengan fitur offline map.",
       fullDesc:
@@ -144,8 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
       id: 2,
       title: "Al Quran Ku",
       images: [
-        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/alquran-thumbnail-1.jpg",
-        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/alquran-thumbnail-2.jpg",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/raw/main/img/alquran-thumbnail-1.jpg",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/raw/main/img/alquran-thumbnail-2.jpg",
       ],
       shortDesc: "Aplikasi Al-Qur'an digital dengan audio murottal dan mode gelap.",
       fullDesc:
@@ -158,8 +158,8 @@ document.addEventListener("DOMContentLoaded", function () {
       id: 3,
       title: "EMYU Store",
       images: [
-        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/emyu-store-thumbnail-1.jpg",
-        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/blob/main/img/emyu-store-thumbnail-2.png",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/raw/main/img/emyu-store-thumbnail-1.jpg",
+        "https://github.com/zidniyfak/CodingCamp-20Oct25-zidniyfak/raw/main/img/emyu-store-thumbnail-2.png",
       ],
       shortDesc: "Website e-commerce merchandise Manchester United.",
       fullDesc:
