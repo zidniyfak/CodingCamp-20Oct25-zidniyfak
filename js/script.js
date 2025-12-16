@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let isValid = true;
       let errorMessage = "Please fix the following errors:\n\n";
 
-      // Validasi
+      // Validasi Sederhana
       if (name === "") {
         isValid = false;
         errorMessage += "• Name is required.\n";
@@ -122,38 +122,36 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========================================
-  // 3. PROJECT DATA & PAGINATION
+  // 3. PROJECT DATA (WITH MULTIPLE IMAGES)
   // =========================================
   const projectsData = [
     {
       id: 1,
       title: "MounTrek",
-      image:
-        "https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=387",
+      // Array Gambar: Index 0 akan jadi thumbnail
+      images: ["../img/mountrek-1.jpg", "../img/mountrek-2.jpg"],
       shortDesc: "Aplikasi Android navigasi untuk pendaki gunung dengan fitur offline map.",
       fullDesc:
         "MountTrek adalah solusi lengkap bagi para pendaki. Selain fitur navigasi offline, aplikasi ini menyediakan informasi cuaca real-time di pegunungan, estimasi waktu pendakian, dan fitur SOS darurat yang mengirimkan koordinat ke tim penyelamat. Dibangun menggunakan arsitektur MVVM untuk performa maksimal.",
       techStack: ["Kotlin", "Laravel", "MySQL"],
       github: "https://github.com/zidniyfak/MountTrek_v2",
-      demo: "#", // Sembunyi
+      demo: "#", // Kosongkan atau '#' jika tidak ada live demo
     },
     {
       id: 2,
-      title: "Al Quran Android",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=870",
+      title: "Al Quran Ku",
+      images: ["../img/alquran-thumbnail-1.jpg", "../img/alquran-thumbnail-2.jpg"],
       shortDesc: "Aplikasi Al-Qur'an digital dengan audio murottal dan mode gelap.",
       fullDesc:
         "Aplikasi ini dirancang untuk memudahkan ibadah harian. Fitur unggulannya meliputi pencarian ayat pintar, bookmark tak terbatas, dan audio player yang bisa berjalan di background. UI dirancang minimalis dengan dukungan Dark Mode penuh.",
       techStack: ["Kotlin", "Retrofit"],
       github: "https://github.com/zidniyfak/AlQuran-Android",
-      demo: "#", // Sembunyi
+      demo: "#",
     },
     {
       id: 3,
       title: "EMYU Store",
-      image:
-        "https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=727",
+      images: ["../img/emyu-store-thumbnail-1.jpg", "../img/emyu-store-thumbnail-2.png"],
       shortDesc: "Website e-commerce merchandise Manchester United.",
       fullDesc:
         "Platform e-commerce responsif yang dibangun tanpa framework CSS/JS (Pure Native). Memiliki fitur keranjang belanja (cart) menggunakan LocalStorage, filter produk dinamis, dan validasi form checkout.",
@@ -161,17 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
       github: "https://github.com/zidniyfak/emyu-store",
       demo: "#",
     },
-    // {
-    //   id: 4,
-    //   title: "Task App (Dummy)",
-    //   image:
-    //     "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=872",
-    //   shortDesc: "Manajemen tugas sederhana dengan React.",
-    //   fullDesc: "Aplikasi Todo List modern dengan fitur Drag and Drop.",
-    //   techStack: ["React", "Tailwind", "Vite"],
-    //   github: "#",
-    //   demo: "#", // Sembunyi
-    // },
   ];
 
   const itemsPerPage = 3;
@@ -182,7 +169,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.getElementById("next-btn");
   const pageIndicator = document.getElementById("page-indicator");
 
-  // --- FUNGSI RENDER ---
+  // =========================================
+  // 4. RENDER & PAGINATION LOGIC
+  // =========================================
   function renderProjects(page) {
     if (!projectContainer) return;
 
@@ -192,9 +181,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const paginatedProjects = projectsData.slice(start, end);
 
     paginatedProjects.forEach((project) => {
+      // Mengambil gambar pertama sebagai thumbnail
+      const thumbnail = project.images && project.images.length > 0 ? project.images[0] : "";
+
       const projectCard = `
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col h-full">
-          <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover"/>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col h-full group">
+          <img src="${thumbnail}" alt="${project.title}" class="w-full h-48 object-cover object-top transform transition-transform duration-500 group-hover:scale-110"/>
           <div class="p-6 flex flex-col flex-grow">
             <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
             <p class="text-gray-600 mb-4 flex-grow text-sm line-clamp-3">
@@ -202,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </p>
             <button 
                 onclick="openModal(${project.id})" 
-                class="text-[#720707] font-semibold hover:underline mt-auto inline-flex items-center w-fit cursor-pointer">
+                class="text-[#720707] font-semibold hover:underline mt-auto inline-flex items-center w-fit cursor-pointer outline-none">
                 View Project <i class="fa-solid fa-arrow-right ml-2"></i>
             </button>
           </div>
@@ -211,27 +203,22 @@ document.addEventListener("DOMContentLoaded", function () {
       projectContainer.innerHTML += projectCard;
     });
 
-    // Panggil update kontrol setiap kali render
     updatePaginationControls();
   }
 
-  // --- FUNGSI UPDATE BUTTON & INDICATOR ---
   function updatePaginationControls() {
     if (!prevBtn || !nextBtn || !pageIndicator) return;
 
     const totalPages = Math.ceil(projectsData.length / itemsPerPage);
     pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
 
-    // Logic Tombol Prev
     prevBtn.disabled = currentPage === 1;
     prevBtn.style.opacity = currentPage === 1 ? "0.5" : "1";
 
-    // Logic Tombol Next
     nextBtn.disabled = currentPage === totalPages;
     nextBtn.style.opacity = currentPage === totalPages ? "0.5" : "1";
   }
 
-  // --- EVENT LISTENERS PAGINATION ---
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
       if (currentPage > 1) {
@@ -252,10 +239,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========================================
-  // 4. MODAL FUNCTIONS
+  // 5. MODAL & CAROUSEL LOGIC (UPDATED)
   // =========================================
   const modal = document.getElementById("project-modal");
   const closeModalBtn = document.getElementById("close-modal-btn");
+
+  // Elemen di dalam Modal
   const mImage = document.getElementById("modal-image");
   const mTitle = document.getElementById("modal-title");
   const mDesc = document.getElementById("modal-description");
@@ -263,29 +252,79 @@ document.addEventListener("DOMContentLoaded", function () {
   const mLive = document.getElementById("modal-live-link");
   const mGithub = document.getElementById("modal-github-link");
 
-  // Fungsi Global untuk Buka Modal
+  // Elemen Carousel Baru
+  const mPrevImgBtn = document.getElementById("modal-prev-img");
+  const mNextImgBtn = document.getElementById("modal-next-img");
+  const mImageCounter = document.getElementById("image-counter");
+
+  // State Variables untuk Carousel
+  let currentProjectImages = [];
+  let currentImageIndex = 0;
+
+  // Fungsi: Update Gambar di Modal
+  function updateModalImage() {
+    if (currentProjectImages.length > 0) {
+      // Efek transisi halus (fade)
+      mImage.style.opacity = "0";
+      setTimeout(() => {
+        mImage.src = currentProjectImages[currentImageIndex];
+        mImage.style.opacity = "1";
+      }, 150);
+
+      // Update Text Counter (Contoh: 1/3)
+      if (mImageCounter) {
+        mImageCounter.textContent = `${currentImageIndex + 1}/${currentProjectImages.length}`;
+      }
+    }
+  }
+
+  // Fungsi Global: Buka Modal (Dipanggil dari HTML onclick)
   window.openModal = function (id) {
     const project = projectsData.find((p) => p.id === id);
     if (!project || !modal) return;
 
-    // Isi konten modal
-    if (mImage) mImage.src = project.image;
+    // 1. Reset State
+    currentProjectImages = project.images || [];
+    currentImageIndex = 0;
+
+    // 2. Isi Konten Teks
     if (mTitle) mTitle.textContent = project.title;
     if (mDesc) mDesc.textContent = project.fullDesc;
 
-    // Logic Hide Tombol Live Demo
+    // 3. Setup Gambar Awal
+    updateModalImage();
+
+    // 4. Cek Tombol Next/Prev (Sembunyikan jika gambar cuma 1)
+    if (currentProjectImages.length > 1) {
+      // Kita set display via JS untuk menimpa kondisi 'hidden' awal,
+      // namun tetap memanfaatkan class hover dari Tailwind jika diinginkan
+      if (mPrevImgBtn) {
+        mPrevImgBtn.classList.remove("hidden");
+        mPrevImgBtn.style.display = "flex";
+      }
+      if (mNextImgBtn) {
+        mNextImgBtn.classList.remove("hidden");
+        mNextImgBtn.style.display = "flex";
+      }
+      if (mImageCounter) mImageCounter.style.display = "block";
+    } else {
+      if (mPrevImgBtn) mPrevImgBtn.style.display = "none";
+      if (mNextImgBtn) mNextImgBtn.style.display = "none";
+      if (mImageCounter) mImageCounter.style.display = "none";
+    }
+
+    // 5. Setup Link Buttons
     if (mLive) {
       mLive.href = project.demo;
       if (!project.demo || project.demo === "#") {
-        mLive.style.display = "none"; // Hide paksa
+        mLive.style.display = "none";
       } else {
-        mLive.style.display = "inline-flex"; // Tampilkan kembali
+        mLive.style.display = "inline-flex";
       }
     }
-
     if (mGithub) mGithub.href = project.github;
 
-    // Render Tech Stack
+    // 6. Setup Tech Stack Tags
     if (mTech) {
       mTech.innerHTML = project.techStack
         .map(
@@ -295,31 +334,74 @@ document.addEventListener("DOMContentLoaded", function () {
         .join("");
     }
 
-    // Munculkan Modal
+    // 7. Tampilkan Modal
     modal.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden"; // Disable scroll body
   };
 
-  // Fungsi Tutup Modal
+  // Event Listener: Tombol Next/Prev Carousel
+  if (mPrevImgBtn) {
+    mPrevImgBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // Biar modal gak ketutup pas klik tombol
+      if (currentProjectImages.length > 1) {
+        currentImageIndex--;
+        if (currentImageIndex < 0) {
+          currentImageIndex = currentProjectImages.length - 1; // Loop ke belakang
+        }
+        updateModalImage();
+      }
+    });
+  }
+
+  if (mNextImgBtn) {
+    mNextImgBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (currentProjectImages.length > 1) {
+        currentImageIndex++;
+        if (currentImageIndex >= currentProjectImages.length) {
+          currentImageIndex = 0; // Loop ke depan
+        }
+        updateModalImage();
+      }
+    });
+  }
+
+  // Fungsi: Tutup Modal
   function closeModal() {
     if (modal) {
       modal.classList.add("hidden");
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto"; // Enable scroll body
     }
   }
 
+  // Event Listeners untuk Tutup Modal
   if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
   if (modal) {
     modal.addEventListener("click", (e) => {
+      // Tutup jika klik area gelap (backdrop)
       if (e.target === modal) closeModal();
     });
   }
+
+  // Keyboard Navigation (ESC & Arrows)
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+    if (!modal || modal.classList.contains("hidden")) return;
+
+    if (e.key === "Escape") {
       closeModal();
+    } else if (e.key === "ArrowLeft") {
+      // Geser kiri pakai keyboard
+      if (mPrevImgBtn && mPrevImgBtn.style.display !== "none") {
+        mPrevImgBtn.click();
+      }
+    } else if (e.key === "ArrowRight") {
+      // Geser kanan pakai keyboard
+      if (mNextImgBtn && mNextImgBtn.style.display !== "none") {
+        mNextImgBtn.click();
+      }
     }
   });
 
-  // Render Pertama Kali
+  // Jalankan Render Pertama Kali
   renderProjects(currentPage);
 });

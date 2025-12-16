@@ -406,14 +406,55 @@
         <div
           class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl"
         >
-          <div class="relative h-64 w-full">
-            <img id="modal-image" src="" alt="Project Image" class="h-full w-full object-cover" />
+          <!-- <div class="relative h-64 w-full">
+            <img
+              id="modal-image"
+              src=""
+              alt="Project Image"
+              class="h-full w-full object-cover object-top"
+            />
             <button
               id="close-modal-btn"
               class="absolute top-4 right-4 rounded-full bg-white/80 p-2 text-gray-800 hover:bg-white hover:text-[#720707] transition"
             >
               <i class="fa-solid fa-xmark text-xl w-6 h-6 flex items-center justify-center"></i>
             </button>
+          </div> -->
+
+          <div class="relative h-64 w-full group bg-gray-200">
+            <img
+              id="modal-image"
+              src=""
+              alt="Project Image"
+              class="h-full w-full object-cover object-top transition-opacity duration-300"
+            />
+
+            <button
+              id="close-modal-btn"
+              class="absolute top-4 right-4 rounded-full bg-white/80 p-2 text-gray-800 hover:bg-white hover:text-[#720707] transition z-10"
+            >
+              <i class="fa-solid fa-xmark text-xl w-6 h-6 flex items-center justify-center"></i>
+            </button>
+
+            <button
+              id="modal-prev-img"
+              class="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-black/50 text-white p-2 hover:bg-black/70 transition hidden group-hover:flex items-center justify-center w-10 h-10"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button
+              id="modal-next-img"
+              class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-black/50 text-white p-2 hover:bg-black/70 transition hidden group-hover:flex items-center justify-center w-10 h-10"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div
+              class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-md"
+            >
+              <span id="image-counter">1/1</span>
+            </div>
           </div>
 
           <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
